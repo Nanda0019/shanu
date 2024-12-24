@@ -1,0 +1,29 @@
+MV
+#include <stdio.h>
+#include <stdlib.h>
+void mv(const char *F1, const char *F2) {
+    rename(F1, F2);
+}
+int main(int argc, char *argv[]) {
+    mv(argv[1], argv[2]);
+    return 0;
+}
+
+
+CAT
+#include <stdio.h>
+#include <stdlib.h>
+void cat(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    char ch;
+    while ((ch = fgetc(file)) != EOF) {
+        putchar(ch);
+    }
+    fclose(file);
+}
+int main(int argc, char *argv[]) {
+
+    cat(argv[1]);
+    return 0;
+}
+
